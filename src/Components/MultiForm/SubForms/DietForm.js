@@ -1,0 +1,46 @@
+import React from "react";
+import "./SubForm.css";
+
+export default function DietForm(props) {
+  const preventFunc = (e) => e.preventDefault();
+  const handleRadio = () => {};
+
+  return (
+    <form onSubmit={preventFunc} className="diet-form">
+      <p> Qulle est ton régime allimentaire? </p>
+      <label htmlFor="nodiet">Pas de régim particulier</label>
+      <input
+        onChange={handleRadio}
+        type="radio"
+        name="diet"
+        id="nodiet"
+        value="nodiet"
+      />
+      <label htmlFor="homnivorous">homnivore</label>
+      <input
+        onChange={handleRadio}
+        type="radio"
+        name="diet"
+        id="homnivorous"
+        value="homnivorous"
+      />
+      <label htmlFor="vegetarian">Végétarien</label>
+      <input
+        onChange={handleRadio}
+        type="radio"
+        name="diet"
+        id="vegetarian"
+        value="vegetarian"
+      />
+      <label htmlFor="vegan">Vegan</label>
+      <input
+        onChange={handleRadio}
+        type="radio"
+        name="diet"
+        id="vegan"
+        value="vegan"
+      />
+      <button onClick={() => props.modifyIndex(3)}>Valider</button>
+    </form>
+  );
+}
