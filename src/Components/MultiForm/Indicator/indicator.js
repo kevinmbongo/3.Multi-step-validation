@@ -21,10 +21,10 @@ export default function Indicator() {
           <img src={love} alt="" />
         </div>
         <div className="bloc-img">
-          <img src={diet} alt="" />
+          <img src={allergy} alt="" />
         </div>
         <div className="bloc-img">
-          <img src={allergy} alt="" />
+          <img src={diet} alt="" />
         </div>
         <div className="bloc-img">
           <img src={thumb} alt="" />
