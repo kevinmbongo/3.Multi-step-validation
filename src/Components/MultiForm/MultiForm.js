@@ -5,6 +5,7 @@ import "./MultiForm.css";
 import Allergies from "./SubForms/Allergies";
 import DietForm from "./SubForms/DietForm";
 import FoodStyle from "./SubForms/FoodStyle";
+import HateLove from "./SubForms/HateLove";
 
 export default function MultiForm() {
   const [formIndex, setFormIndex] = useState(1);
@@ -38,6 +39,8 @@ export default function MultiForm() {
         <FoodStyle modifyIndex={modifyIndex} />
       ) : formIndex === 4 ? (
         <Allergies modifyIndex={modifyIndex} />
+      ) : formIndex === 5 ? (
+        <HateLove modifyIndex={modifyIndex} />
       ) : (
         ""
       )}
