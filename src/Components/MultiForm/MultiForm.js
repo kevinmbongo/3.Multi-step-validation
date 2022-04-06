@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Indicator from "./Indicator/indicator";
 import CardBegin from "./Infos/CardBegin";
 import "./MultiForm.css";
+import Allergies from "./SubForms/Allergies";
 import DietForm from "./SubForms/DietForm";
+import FoodStyle from "./SubForms/FoodStyle";
+
 export default function MultiForm() {
   const [formIndex, setFormIndex] = useState(1);
   const [allFormData, setAllFormData] = useState({
@@ -31,6 +34,10 @@ export default function MultiForm() {
         <CardBegin modifyIndex={modifyIndex} />
       ) : formIndex === 2 ? (
         <DietForm modifyIndex={modifyIndex} />
+      ) : formIndex === 3 ? (
+        <FoodStyle modifyIndex={modifyIndex} />
+      ) : formIndex === 4 ? (
+        <Allergies modifyIndex={modifyIndex} />
       ) : (
         ""
       )}

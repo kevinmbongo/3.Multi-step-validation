@@ -10,7 +10,6 @@ export default function DietForm(props) {
   const handleRadio = (e) => {
     setFormData({ dietForm: e.target.value });
   };
-  console.log(formData);
 
   return (
     <form onSubmit={preventFunc} className="diet-form">
