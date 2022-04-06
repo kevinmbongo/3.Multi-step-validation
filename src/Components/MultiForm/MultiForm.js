@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Indicator from "./Indicator/indicator";
 import CardBegin from "./Infos/CardBegin";
+import CardEnd from "./Infos/CardEnd";
 import "./MultiForm.css";
 import Allergies from "./SubForms/Allergies";
 import DietForm from "./SubForms/DietForm";
@@ -27,10 +28,25 @@ export default function MultiForm() {
     }
   };
   console.log(allFormData);
+  const elements = [
+    <CardBegin modifyIndex={modifyIndex} />,
+    <DietForm modifyIndex={modifyIndex} />,
+    <FoodStyle modifyIndex={modifyIndex} />,
+    <Allergies modifyIndex={modifyIndex} />,
+    <HateLove modifyIndex={modifyIndex} />,
+    <CardEnd modifyIndex={modifyIndex} />,
+  ];
+
   return (
     <div className="container-multiform">
-      <Indicator />
+      <Indicator formIndex={formIndex} />
 
+      {elements.map((item, index) => {
+        if (index + 1 === formIndex) {
+          return elements[index];
+        }
+      })}
+      {/*
       {formIndex === 1 ? (
         <CardBegin modifyIndex={modifyIndex} />
       ) : formIndex === 2 ? (
@@ -41,9 +57,12 @@ export default function MultiForm() {
         <Allergies modifyIndex={modifyIndex} />
       ) : formIndex === 5 ? (
         <HateLove modifyIndex={modifyIndex} />
+      ) : formIndex === 6 ? (
+        <CardEnd modifyIndex={modifyIndex} />
       ) : (
         ""
       )}
+      */}
     </div>
   );
 }
