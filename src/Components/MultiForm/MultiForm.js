@@ -5,17 +5,24 @@ import "./MultiForm.css";
 import DietForm from "./SubForms/DietForm";
 export default function MultiForm() {
   const [formIndex, setFormIndex] = useState(1);
-  const [formData, setFormData] = useState({
-    dietform: "",
+  const [allFormData, setAllFormData] = useState({
+    dietForm: "",
     foodStyle: [],
     allergies: [],
     prefs: {},
   });
 
-  const modifyIndex = (index) => {
+  const modifyIndex = (index, data) => {
     setFormIndex(index);
-  };
+    if (data) {
+      const newData = { ...allFormData };
+      const firstPropNewData = Object.keys(data)[0];
 
+      newData[firstPropNewData] = data[firstPropNewData];
+      setAllFormData(newData);
+    }
+  };
+  console.log(allFormData);
   return (
     <div className="container-multiform">
       <Indicator />
